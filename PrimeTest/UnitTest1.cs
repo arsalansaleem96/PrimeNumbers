@@ -6,6 +6,7 @@ namespace Tests
 {
     public class Tests
     {
+        #region Test cases for Prime Generator from 1 to 11
         [Test]
         public void TestPrime1()
         {
@@ -41,6 +42,8 @@ namespace Tests
             HashSet<int> test = new HashSet<int>() { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 };
             CollectionAssert.AreEqual(test, primes);
         }
+        #endregion
+        #region Test cases for Prime Multiplication Table 2,3 and 5
         [Test]
         public void TestPrimeMul2()
         {
@@ -80,5 +83,6 @@ namespace Tests
             CollectionAssert.AreEqual(test[1], output[1]);
             CollectionAssert.AreEqual(test[2], output[2]);
         }
+        #endregion
     }
 }

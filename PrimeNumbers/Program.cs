@@ -8,8 +8,8 @@ namespace PrimeNumbers
         static void Main(string[] args)
         {
             int num = GetInputNumber();
-            HashSet<int> primes = PrimeGenerator.Generate(num);
-            List<List<int>> mulPrimes = HelperFunctions.MultiplyPrimes(primes);
+            HashSet<int> primes = PrimeGenerator.Generate(num); // Basic Prime Generator
+            List<List<int>> mulPrimes = HelperFunctions.MultiplyPrimes(primes); //Multiply primes like in matrix form
             PrintPrimes(primes);
             PrintMulTable(mulPrimes);
             Console.ReadLine();
