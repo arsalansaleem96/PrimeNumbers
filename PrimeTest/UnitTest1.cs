@@ -9,41 +9,42 @@ namespace Tests
         [Test]
         public void TestPrime1()
         {
-            List<int> primes = PrimeGenerator.Generate(1);
-            Assert.AreEqual(2, primes[0]);
+            HashSet<int> primes = PrimeGenerator.Generate(1);
+            HashSet<int> test = new HashSet<int>() { 2 };
+            Assert.AreEqual(test, primes);
         }
         [Test]
         public void TestPrime3()
         {
-            List<int> primes = PrimeGenerator.Generate(3);
-            List<int> test = new List<int>() { 2, 3, 5 };
+            HashSet<int> primes = PrimeGenerator.Generate(3);
+            HashSet<int> test = new HashSet<int>() { 2, 3, 5 };
             CollectionAssert.AreEqual(test, primes);
         }
         [Test]
         public void TestPrime5()
         {
-            List<int> primes = PrimeGenerator.Generate(5);
-            List<int> test = new List<int>() { 2, 3, 5, 7, 11 };
+            HashSet<int> primes = PrimeGenerator.Generate(5);
+            HashSet<int> test = new HashSet<int>() { 2, 3, 5, 7, 11 };
             CollectionAssert.AreEqual(test, primes);
         }
         [Test]
         public void TestPrime7()
         {
-            List<int> primes = PrimeGenerator.Generate(7);
-            List<int> test = new List<int>() { 2, 3, 5, 7, 11, 13, 17 };
+            HashSet<int> primes = PrimeGenerator.Generate(7);
+            HashSet<int> test = new HashSet<int>() { 2, 3, 5, 7, 11, 13, 17 };
             CollectionAssert.AreEqual(test, primes);
         }
         [Test]
         public void TestPrime11()
         {
-            List<int> primes = PrimeGenerator.Generate(11);
-            List<int> test = new List<int>() { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 };
+            HashSet<int> primes = PrimeGenerator.Generate(11);
+            HashSet<int> test = new HashSet<int>() { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 };
             CollectionAssert.AreEqual(test, primes);
         }
         [Test]
         public void TestPrimeMul2()
         {
-            List<int> input = new List<int>() { 2, 3 };
+            HashSet<int> input = new HashSet<int>() { 2, 3 };
             List<List<int>> output = HelperFunctions.MultiplyPrimes(input);
             List<List<int>> test = new List<List<int>>();
             test.Add(new List<int> { 4, 6 });
@@ -54,7 +55,7 @@ namespace Tests
         [Test]
         public void TestPrimeMul3()
         {
-            List<int> input = new List<int>() { 2, 3, 5 };
+            HashSet<int> input = new HashSet<int>() { 2, 3, 5 };
             List<List<int>> output = HelperFunctions.MultiplyPrimes(input);
             List<List<int>> test = new List<List<int>>();
             test.Add(new List<int> { 4, 6, 10 });
@@ -67,7 +68,7 @@ namespace Tests
         [Test]
         public void TestPrimeMul5()
         {
-            List<int> input = new List<int>() { 2, 3, 5, 7, 11 };
+            HashSet<int> input = new HashSet<int>() { 2, 3, 5, 7, 11 };
             List<List<int>> output = HelperFunctions.MultiplyPrimes(input);
             List<List<int>> test = new List<List<int>>();
             test.Add(new List<int> { 4, 6, 10, 14, 22 });

@@ -1,26 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace PrimeNumbers
 {
     public class PrimeGenerator
     {
-        public static List<int> Generate(int n)
+        public static HashSet<int> Generate(int n)
         {
-            List<int> primes = new List<int>();
+            HashSet<int> primes = new HashSet<int>();
             primes.Add(2);
             int nextPrime = 3;
             while (primes.Count < n)
             {
                 int sqrt = (int)Math.Sqrt(nextPrime);
                 bool isPrime = true;
-                for (int i = 0; primes[i] <= sqrt; i++)
+
+                foreach (int prime in primes)
                 {
-                    if (nextPrime % primes[i] == 0)
+                    if (prime <= sqrt)
                     {
-                        isPrime = false;
-                        break;
+                        if (nextPrime % prime == 0)
+                        {
+                            isPrime = false;
+                            break;
+                        }
                     }
                 }
                 if (isPrime)

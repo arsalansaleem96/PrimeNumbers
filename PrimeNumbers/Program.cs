@@ -8,25 +8,25 @@ namespace PrimeNumbers
         static void Main(string[] args)
         {
             int num = GetInputNumber();
-            List<int> primes = PrimeGenerator.Generate(num);
+            HashSet<int> primes = PrimeGenerator.Generate(num);
             List<List<int>> mulPrimes = HelperFunctions.MultiplyPrimes(primes);
             PrintPrimes(primes);
             PrintMulTable(mulPrimes);
             Console.ReadLine();
         }
-        private static void PrintMulTable(List<List<int>> list)
+        private static void PrintMulTable(List<List<int>> mulPrimes)
         {
             Console.WriteLine("\n\nPrime Multiplication Table.\n");
-            for (int i = 0; i < list.Count; i++)
+            for (int row = 0; row < mulPrimes.Count; row++)
             {
-                for (int j = 0; j < list.Count; j++)
+                for (int col = 0; col < mulPrimes.Count; col++)
                 {
-                    Console.Write("{0} ", list[i][j]);
+                    Console.Write("{0} ", mulPrimes[row][col]);
                 }
                 Console.WriteLine();
             }
         }
-        private static void PrintPrimes(List<int> primes)
+        private static void PrintPrimes(HashSet<int> primes)
         {
             Console.WriteLine("Prime Numbers.\n");
             foreach (int prime in primes)

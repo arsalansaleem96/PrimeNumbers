@@ -6,7 +6,7 @@ namespace PrimeNumbers
 {
     public class HelperFunctions
     {
-        public static List<List<int>> MultiplyPrimes(List<int> primes)
+        public static List<List<int>> MultiplyPrimes(HashSet<int> primes)
         {
             List<List<int>> table = new List<List<int>>();
             foreach(int i in primes)
